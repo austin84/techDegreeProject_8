@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Awesome Startup Employee Directory</title>
   </head>
   <body>
@@ -109,6 +114,26 @@
         </div>
       </div>
     </main>
+
+    <!-- Modal -->
+    <div class="overlay hidden">
+      <div class="modal">
+        <button class="modal-close">X</button>
+        <div class="modal-content">
+          <!-- modal info added with JS-->
+          <img src="img/member-1.jpg" alt="member one photo" class="avatar" />
+          <div class="text-container">
+            <h2 class="name">John Doe</h2>
+            <p class="email">john.doe@doemail.com</p>
+            <p class="address">Portland</p>
+            <hr />
+            <p>(503) 364-3249</p>
+            <p class="address">12345 N Street Avenue, Portland, OR 97232</p>
+            <p>Birthday: 01/04/85</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="js/app.js"></script>
   </body>

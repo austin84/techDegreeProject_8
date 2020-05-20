@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+}
+
+// *
+// * Modal Styles
+// *
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(100, 100, 100, 0.4);
+}
+
+.modal {
+  max-width: 375px;
+  margin: 15% auto auto;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #778;
+  border-radius: 5px;
+  padding: 30px 20px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+// *
+// * Main Styles
+// *
+header {
+  display: flex;
+  height: 150px;
+  align-items: center;
+  justify-content: flex-start;
+  h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.4em;
+    margin-left: 30px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+      0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.card {
+  max-width: 300px;
+  display: flex;
+  padding: 10px 15px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
