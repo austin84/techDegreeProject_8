@@ -73,9 +73,27 @@ header h1 {
   display: -ms-flexbox;
   display: flex;
   padding: 10px 15px;
+  background-origin: padding-box;
+  border: 1px solid #778;
+  border-radius: 5px;
+  margin: 8px auto;
 }
 
 .avatar {
   border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+  .grid-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid-container {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -69,8 +69,28 @@ header {
   max-width: 300px;
   display: flex;
   padding: 10px 15px;
+  background-origin: padding-box;
+  border: 1px solid #778;
+  border-radius: 5px;
+  margin: 8px auto;
 }
 
 .avatar {
   border-radius: 50%;
+}
+
+// *
+// * Media Queries
+// *
+
+@media (min-width: 640px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
