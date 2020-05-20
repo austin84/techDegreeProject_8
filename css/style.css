@@ -83,11 +83,12 @@ header h1 {
 }
 
 .card p {
-  font-size: 0.83em;
+  font-size: 0.8em;
 }
 
 .avatar {
   border-radius: 50%;
+  width: 100px;
 }
 
 .text-container {
