@@ -54,10 +54,9 @@ header {
 }
 
 header h1 {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-size: 1.4em;
   margin-left: 30px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .grid-container {
@@ -68,29 +67,57 @@ header h1 {
 }
 
 .card {
-  max-width: 300px;
+  max-width: 340px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px 15px;
+  padding: 25px 20px;
   background-origin: padding-box;
-  border: 1px solid #778;
-  border-radius: 5px;
-  margin: 8px auto;
+  border: 2px solid lightgrey;
+  border-radius: 8px;
+  margin: 20px auto;
+  font-family: "Noto Sans JP", sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card p {
+  font-size: 0.83em;
 }
 
 .avatar {
   border-radius: 50%;
 }
 
-@media (min-width: 640px) {
+.text-container {
+  margin-left: 10px;
+}
+
+.name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+
+.email,
+.address,
+.text-container p {
+  color: #999797;
+}
+
+.email {
+  margin-bottom: 4px;
+}
+
+@media (min-width: 680px) {
   .grid-container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .grid-container {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
