@@ -82,12 +82,15 @@ function displayModal(index) {
   `;
 
   modalContent.innerHTML = html;
+  modalContent.setAttribute('data-index', `${index}`);
   overlay.classList.remove('hidden');
 }
 
 // *
 // * Event Listeners
 // *
+
+// Display Modal Listener
 gridContainer.addEventListener('click', (e) => {
   if (e.target !== gridContainer) {
     const card = e.target.closest('.card');
@@ -97,8 +100,22 @@ gridContainer.addEventListener('click', (e) => {
   }
 });
 
+// Close Modal Listener
 modalClose.addEventListener('click', (e) => {
   overlay.classList.add('hidden');
+});
+
+// Modal Nav Listener
+modalContent.addEventListener('click', (e) => {
+  const modalLeft = document.getElementById('left');
+  const modalRight = document.getElementById('right');
+  if (e.target == modalLeft) {
+    let index = modalContent.getAttribute('data-index');
+    displayModal(index - 1);
+  } else if (e.target == modalRight) {
+    let index = modalContent.getAttribute('data-index');
+    displayModal(index + 1);
+  }
 });
 
 // Request and Populate Data
