@@ -1,5 +1,6 @@
-// Variables
-
+// *
+// * Variables
+// *
 let employees = [];
 const urlAPI =
   'https://randomuser.me/api/?results=12&nat=us&inc=name,location,email,dob,phone,picture&noinfo';
@@ -9,8 +10,12 @@ const modalContent = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
 const modalLeft = document.getElementById('left');
 const modalRight = document.getElementById('right');
+const modal = document.querySelector('.modal');
 
-/**
+// *
+// * Functions
+// *
+/** *
  *
  * @param {string} url - the url required to fetch data from the Random User API
  * Fucntion to fetch data and convert it to JSON
@@ -64,9 +69,7 @@ function displayModal(index) {
     location: { city, street, state, postcode },
     picture,
   } = employees[index];
-
   let date = new Date(dob.date);
-
   const html = `
   <img src="${picture.large}" alt="employee photo" class="avatar" />
   <div class="text-container">
@@ -80,7 +83,6 @@ function displayModal(index) {
     <p>${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
   </div>
   `;
-
   modalContent.innerHTML = html;
   modalContent.setAttribute('data-index', `${index}`);
   if (index == 0) {
@@ -91,14 +93,12 @@ function displayModal(index) {
     modalLeft.classList.remove('hidden');
     modalRight.classList.remove('hidden');
   }
-
   overlay.classList.remove('hidden');
 }
 
 // *
 // * Event Listeners
 // *
-
 // Display Modal Listener
 gridContainer.addEventListener('click', (e) => {
   if (e.target !== gridContainer) {
@@ -113,8 +113,14 @@ modalClose.addEventListener('click', (e) => {
   overlay.classList.add('hidden');
 });
 
-// Modal Nav Listener
+// Close Modal by Clicking Outside
+overlay.addEventListener('click', (e) => {
+  if (overlay.className !== 'hidden' && e.target !== modal) {
+    overlay.classList.add('hidden');
+  }
+});
 
+// Modal Nav Listener
 overlay.addEventListener('click', (e) => {
   let index = parseInt(modalContent.getAttribute('data-index'));
   if (e.target == modalLeft) {
