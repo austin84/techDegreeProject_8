@@ -83,6 +83,15 @@ function displayModal(index) {
 
   modalContent.innerHTML = html;
   modalContent.setAttribute('data-index', `${index}`);
+  if (index == 0) {
+    modalLeft.classList.add('hidden');
+  } else if (index == 11) {
+    modalRight.classList.add('hidden');
+  } else {
+    modalLeft.classList.remove('hidden');
+    modalRight.classList.remove('hidden');
+  }
+
   overlay.classList.remove('hidden');
 }
 
@@ -95,7 +104,6 @@ gridContainer.addEventListener('click', (e) => {
   if (e.target !== gridContainer) {
     const card = e.target.closest('.card');
     const index = card.getAttribute('data-index');
-
     displayModal(index);
   }
 });
@@ -106,15 +114,15 @@ modalClose.addEventListener('click', (e) => {
 });
 
 // Modal Nav Listener
-modalLeft.addEventListener('click', (e) => {
-  let index = modalContent.getAttribute('data-index');
-  console.log(index);
-  displayModal(index - 1);
-});
 
-modalRight.addEventListener('click', (e) => {
-  let index = modalContent.getAttribute('data-index');
-  displayModal(index + 1);
+overlay.addEventListener('click', (e) => {
+  let index = parseInt(modalContent.getAttribute('data-index'));
+  if (e.target == modalLeft) {
+    displayModal(index - 1);
+  }
+  if (e.target == modalRight) {
+    displayModal(index + 1);
+  }
 });
 
 // Request and Populate Data
