@@ -17,14 +17,23 @@
   <body>
     <header class="header">
       <h1 class="title">Awesome Startup Employee Directory</h1>
+      <input
+        type="text"
+        name="search"
+        id="search"
+        placeholder="Search Employees..."
+        data-list=".list"
+      />
     </header>
-    <main class="grid-container"></main>
+    <main class="grid-container list"></main>
     <div class="overlay hidden">
       <div class="modal">
         <button class="modal-close">X</button>
         <div class="modal-content"></div>
       </div>
     </div>
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/jquery.hideseek.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

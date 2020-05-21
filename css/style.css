@@ -8,6 +8,7 @@
 body {
   position: relative;
   height: 100vh;
+  background-color: #f0eef1;
 }
 
 .overlay {
@@ -37,6 +38,31 @@ body {
   cursor: pointer;
 }
 
+#left,
+#right {
+  position: absolute;
+  font-size: 2em;
+  -webkit-transition: text-shadow 100ms;
+  transition: text-shadow 100ms;
+}
+
+#left:hover,
+#right:hover {
+  opacity: 0.8;
+  cursor: default;
+  text-shadow: 3px 3px lightgrey;
+}
+
+#left {
+  left: 10px;
+  top: 100px;
+}
+
+#right {
+  right: 10px;
+  top: 100px;
+}
+
 .hidden {
   display: none;
 }
@@ -46,19 +72,32 @@ header {
   display: -ms-flexbox;
   display: flex;
   height: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: rgba(95, 95, 95, 0.9);
   background-color: #f0eef1;
 }
 
 header h1 {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1.4em;
-  margin-left: 30px;
+  margin-top: 30px;
+}
+
+header input {
+  width: 250px;
+  padding: 5px 10px;
+  margin-top: 40px;
+  border-radius: 4px;
+  border: 1px solid slategrey;
 }
 
 .grid-container {
@@ -66,7 +105,6 @@ header h1 {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  background: #f0eef1;
 }
 
 .card {
@@ -128,6 +166,24 @@ header h1 {
   .grid-container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header h1 {
+    margin-left: 30px;
+  }
+  header input {
+    width: 450px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin: 0 30px 20px 0;
   }
 }
 

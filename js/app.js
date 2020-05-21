@@ -35,7 +35,7 @@ function displayEmployees(employeeData) {
     let city = employee.location.city;
     let picture = employee.picture.large;
     html += `
-    <div class="card" data-index="${index}">
+    <div class="card" data-index="${index}" title="${name.first}${name.last}">
         <img src=${picture} alt="employee photo" class="avatar" />
         <div class="text-container">
           <h2 class="name">${name.first} ${name.last}</h2>
@@ -76,6 +76,8 @@ function displayModal(index) {
     street.name
   } ${city}, ${state} ${postcode}</p>
     <p>${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+    <p id="left"><</p>
+    <p id="right">></p>
   </div>
   `;
 
@@ -99,4 +101,13 @@ modalClose.addEventListener('click', (e) => {
   overlay.classList.add('hidden');
 });
 
+// Request and Populate Data
 getData(urlAPI);
+
+// Initialize Search Feature
+$(document).ready(function () {
+  $('#search').hideseek({
+    nodata: 'Sorry, No Employee Found',
+    attribute: 'title',
+  });
+});
