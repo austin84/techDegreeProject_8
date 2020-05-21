@@ -154,7 +154,9 @@ header input {
 
 .email,
 .address,
-.text-container p {
+.text-container p,
+#left,
+#right {
   color: #999797;
 }
 

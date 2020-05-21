@@ -7,6 +7,8 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContent = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+const modalLeft = document.getElementById('left');
+const modalRight = document.getElementById('right');
 
 /**
  *
@@ -76,8 +78,6 @@ function displayModal(index) {
     street.name
   } ${city}, ${state} ${postcode}</p>
     <p>${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
-    <p id="left"><</p>
-    <p id="right">></p>
   </div>
   `;
 
@@ -106,16 +106,15 @@ modalClose.addEventListener('click', (e) => {
 });
 
 // Modal Nav Listener
-modalContent.addEventListener('click', (e) => {
-  const modalLeft = document.getElementById('left');
-  const modalRight = document.getElementById('right');
-  if (e.target == modalLeft) {
-    let index = modalContent.getAttribute('data-index');
-    displayModal(index - 1);
-  } else if (e.target == modalRight) {
-    let index = modalContent.getAttribute('data-index');
-    displayModal(index + 1);
-  }
+modalLeft.addEventListener('click', (e) => {
+  let index = modalContent.getAttribute('data-index');
+  console.log(index);
+  displayModal(index - 1);
+});
+
+modalRight.addEventListener('click', (e) => {
+  let index = modalContent.getAttribute('data-index');
+  displayModal(index + 1);
 });
 
 // Request and Populate Data

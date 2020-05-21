@@ -141,7 +141,9 @@ header {
 
 .email,
 .address,
-.text-container p {
+.text-container p,
+#left,
+#right {
   color: rgb(153, 151, 151);
 }
 .email {
