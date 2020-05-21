@@ -11,6 +11,7 @@ const modalClose = document.querySelector('.modal-close');
 const modalLeft = document.getElementById('left');
 const modalRight = document.getElementById('right');
 const modal = document.querySelector('.modal');
+const body = document.getElementsByTagName('body');
 
 // *
 // * Functions
@@ -115,7 +116,8 @@ modalClose.addEventListener('click', (e) => {
 
 // Close Modal by Clicking Outside
 overlay.addEventListener('click', (e) => {
-  if (overlay.className !== 'hidden' && e.target !== modal) {
+  const inside = modal.contains(e.target);
+  if (overlay.className !== 'hidden' && !inside) {
     overlay.classList.add('hidden');
   }
 });
